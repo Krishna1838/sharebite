@@ -1,45 +1,71 @@
-# ShareBite 🍎
-### *Food Waste Reduction & Sharing Platform*
+# 🍎 ShareBite: Food Waste Reduction & Sharing Platform
 
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-green.svg?style=flat-square&logo=springboot)](https://spring.io/projects/spring-boot)
-[![React](https://img.shields.io/badge/React-18.3-blue.svg?style=flat-square&logo=react)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-5.2-purple.svg?style=flat-square&logo=vite)](https://vitejs.dev/)
-[![PostgreSQL](https://img.shields.io/badge/Postgres-15%2B-blue.svg?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-
-ShareBite is a full-stack web application designed to combat food waste by connecting local food businesses (**Donors**) with community members (**Recipients**) to distribute surplus food.
+This project is a full-stack web application designed to combat food waste by connecting local food businesses (Donors) with community members (Recipients) to distribute surplus food. It features a modern dark-themed glassmorphic user interface, real-time expiration countdown timers, secure JWT authentication, and a secure pickup verification system.
 
 ---
 
-## 🌐 Live Demo & Deployments
-*   **Frontend Web App:** [https://sharebite-bcmd.onrender.com](https://sharebite-bcmd.onrender.com)
-*   **Backend REST API:** [https://sharebite-backend-41ck.onrender.com](https://sharebite-backend-41ck.onrender.com)
+## 🚀 Live Demo
+
+🌐 [Click here to try the app](https://sharebite-bcmd.onrender.com)  
+⚙️ [Backend API Endpoint](https://sharebite-backend-41ck.onrender.com)  
 
 ---
 
-## ✨ Key Features
+## 🎯 Features
 
-*   **Role-Based User Flows:** Tailored dashboards for Donors (to list food) and Recipients (to claim food).
-*   **Real-time Countdown Timers:** Dynamic visual timers monitoring listing expiration times.
-*   **Secure Pickup Codes:** Auto-generates unique authorization keys for verifying in-person handovers.
-*   **Premium Glassmorphic Design:** Sleek dark-mode user interface with responsive layout grids.
-
----
-
-## 📁 Repository Structure
-
-*   `/backend` - Spring Boot (Java) REST API engine, JWT security filters, and PostgreSQL configurations.
-*   `/frontend` - React SPA (Vite) structured with clean reusable components, context stores, and CSS variables.
-*   `/deploy_ready` - Clean, source-only project build folder optimized for dragging-and-dropping to GitHub.
+- 🔐 **Role-Based Authentication:** Distinct interfaces and permissions for Donors and Recipients.  
+- 📝 **Surplus Food Listing:** Donors can list surplus items with descriptions, location, and dietary tags.  
+- ⏳ **Dynamic Countdown Timers:** Listings display active expiration timers updating in real-time.  
+- 🤝 **Seamless Claim Flow:** Recipients can browse and claim available surplus food with a single click.  
+- 🔐 **Pickup Code Verification:** Auto-generates secure pickup verification codes for safe handover.  
+- 🎨 **Glassmorphic Theme:** Stunning dark-mode visual interface with clean animations.  
 
 ---
 
-## 🚀 How to Run Locally
+## 🔧 How It Works
 
-Ensure you have **Java JDK 17+** and **Node.js 18+** installed.
+1. **Donors** register and list surplus food items, setting an expiration countdown (e.g. 2 hours).  
+2. **Recipients** register, browse the active community listings, and claim an item.  
+3. Upon claiming, the system generates a secure **Pickup Verification Code** (e.g. `SB-1094`) visible only to the recipient.  
+4. The Recipient meets the Donor in person and presents the code.  
+5. The Donor enters the code in their dashboard to verify and mark the transaction as completed.  
 
-### 1. Run Backend (Spring Boot)
-Double-click `run_backend.bat` in `/backend` or run:
-```bash
-cd backend
-mvn spring-boot:run
+---
+
+## 📸 Screenshots
+
+**Donor & Recipient Dashboard**  
+![Dashboard Screenshot](https://github.com/Krishna1838/ShareBite/blob/main/DASHBOARD.png?raw=true)
+
+**Verify & Handover Modal**  
+![Handover Screenshot](https://github.com/Krishna1838/ShareBite/blob/main/VERIFY.png?raw=true)
+
+---
+
+## 🗂 Project Structure
+
+- `backend/` – Spring Boot (Java) REST API server with JWT authentication and PostgreSQL integration  
+- `frontend/` – React SPA (Vite) client with custom glassmorphic styling and services  
+- `deploy_ready/` – Clean source-only directory optimized for manual GitHub upload  
+
+---
+
+## 📊 Results
+
+- Real-time expiration checking works seamlessly.  
+- Fast response with robust REST API architecture.  
+- Secure and authorized session states across logouts and logins.  
+
+---
+
+## 👨‍💻 Author
+
+- **Student Name:** Krishna Vardhan Baratam  
+- **College Name:** VIT-AP  
+- **Email:** krishnavardhanbaratam248@gmail.com
+
+---
+
+## 📄 License
+
+This project is for educational purposes.
