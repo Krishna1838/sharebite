@@ -32,16 +32,6 @@ This project is a full-stack web application designed to combat food waste by co
 
 ---
 
-## 📸 Screenshots
-
-**Donor & Recipient Dashboard**  
-![Dashboard Screenshot](https://github.com/Krishna1838/ShareBite/blob/main/DASHBOARD.png?raw=true)
-
-**Verify & Handover Modal**  
-![Handover Screenshot](https://github.com/Krishna1838/ShareBite/blob/main/VERIFY.png?raw=true)
-
----
-
 ## 🗂 Project Structure
 
 - `backend/` – Spring Boot (Java) REST API server with JWT authentication and PostgreSQL integration  
