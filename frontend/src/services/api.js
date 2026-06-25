@@ -1,10 +1,7 @@
 // API Client Utility to interact with Spring Boot REST Endpoints
 
-// Set this to your live Render backend URL once deployed.
-// It will dynamically use the production URL when built, and empty string (local proxy) during development.
-const API_BASE = import.meta.env.PROD 
-  ? 'https://sharebite-backend.onrender.com' 
-  : '';
+// Use VITE_API_BASE_URL environment variable in production, fallback to local proxy in development
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('sharebite_token');
@@ -122,7 +119,6 @@ export const api = {
       const response = await fetch(`${API_BASE}/api/listings/${id}/verify`, {
         method: 'POST',
         headers: getAuthHeaders(),
-        body: JSON.stringify({ pickupCode }),
       });
       return handleResponse(response);
     }
