@@ -1,0 +1,20 @@
+# Maven build outputs
+backend/target/
+backend/*.jar
+
+# Node modules and build output
+frontend/node_modules/
+frontend/dist/
+
+# Local portable environments
+node-v20.11.1-win-x64/
+apache-maven-3.9.6/
+maven.zip
+node.zip
+
+# OS/IDE settings
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
