@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
 import { Login } from './pages/Login';
@@ -13,6 +13,14 @@ const AppContent = () => {
   // Navigation state
   const [authView, setAuthView] = useState('login'); // 'login' or 'register'
   const [currentTab, setCurrentTab] = useState('dashboard'); // 'dashboard' or 'my-claims'
+
+  // Reset navigation states when user changes (login, logout, switch role)
+  useEffect(() => {
+    setCurrentTab('dashboard');
+    if (!user) {
+      setAuthView('login');
+    }
+  }, [user]);
 
   // Loading Screen
   if (loading) {
