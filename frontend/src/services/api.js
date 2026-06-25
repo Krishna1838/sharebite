@@ -115,10 +115,11 @@ export const api = {
       });
       return handleResponse(response);
     },
-    verify: async (id, pickupCode) => {
+     verify: async (id, pickupCode) => {
       const response = await fetch(`${API_BASE}/api/listings/${id}/verify`, {
         method: 'POST',
         headers: getAuthHeaders(),
+        body: JSON.stringify({ pickupCode }),
       });
       return handleResponse(response);
     }
