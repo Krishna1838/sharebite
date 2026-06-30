@@ -52,7 +52,7 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         // Load the full user details to populate payload claims
-        User user = userService.findByUsername(authRequest.getUsername())
+        User user = userService.findByUsernameOrEmail(authRequest.getUsername())
                 .orElseThrow(() -> new IllegalArgumentException("User not found: " + authRequest.getUsername()));
 
         // Generate token
