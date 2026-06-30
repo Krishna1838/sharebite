@@ -13,7 +13,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     // Catch validation failures (e.g. invalid email, short passwords)
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @annotation.ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) -> {
@@ -40,6 +40,15 @@ public class GlobalExceptionHandler {
         response.put("error", "Forbidden");
         response.put("message", ex.getMessage());
         return ResponseEntity.status(403).body(response);
+    }
+
+    // Catch Spring Security authentication exceptions (e.g. bad credentials)
+    @ExceptionHandler(org.springframework.security.core.AuthenticationException.class)
+    public ResponseEntity<Map<String, String>> handleAuthenticationException(org.springframework.security.core.AuthenticationException ex) {
+        Map<String, String> response = new HashMap<>();
+        response.put("error", "Unauthorized");
+        response.put("message", "Invalid username or password.");
+        return ResponseEntity.status(401).body(response);
     }
 
     // Catch-all general exceptions
